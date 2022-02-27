@@ -42,7 +42,6 @@ void	event_eat(t_info *info, t_philo *philo)
 		print_event(info, philo->id, 2);
 	philo->last_meal = compute_time();
 	sem_post(info->event);
-	// death_monitor(info, philo);
 	mod_usleep(info, info->time_to_eat);
 	sem_wait(info->event);
 	philo->meal_count++;
